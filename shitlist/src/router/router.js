@@ -2,6 +2,7 @@ import React from 'react'
 import {Route} from 'react-router-dom'
 import showList from '../Components/showList'
 import Header from '../header'
+import Footer from '../footer'
 // import UpdateScore from '../Components/UpdateScore'
 // import ScoreAndWins from '../Components/ScoreAndWins'
 
@@ -16,7 +17,7 @@ const ReactRouter = () => {
             {/* <Route path={`${path}ScoreAndWins`} component={ScoreAndWins}/>
             <Route path={`${path}UpdateScore`} component={UpdateScore}/> */}
             
-            
+            <Footer/>
         </React.Fragment>
     )
 }

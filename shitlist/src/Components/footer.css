@@ -1,0 +1,11 @@
+h4{
+    color:red;
+}
+.fot{
+    background-color: black;
+    color:white;
+    display: flex;
+}
+.left{
+    background-color: black;
+}

@@ -1,5 +1,7 @@
-import React, {Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import React,{Component} from 'react'
+import './header';
+import { Navbar,Nav } from 'react-bootstrap';
 const path = window.location.pathname
 
 class Header extends Component {
@@ -15,20 +17,35 @@ class Header extends Component {
     }
     render() {
         return(
-            <div style={this.header}>
-                <NavLink exact to={`${path}`} activeStyle={this.active}>
-                 Home
-             </NavLink>
+            <div className="appHeader">
+                <Navbar bg="light" expand="lg">
+                <Navbar.Brand href="#home">Shit list</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="#allShows">All Shows</Nav.Link>
+                        <Nav.Link href="#ratedShow">All Rated Shows</Nav.Link>
+                        <Nav.Link href="#nonRated">Non Rated Shows</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
+                                     
+               </div>
 
-             {/* <NavLink to={`${path}ScoreAndWins`} activeStyle={this.active}>
-            Scores and Wins
-            </NavLink>
+        //     <div style={this.header}>
+        //         <NavLink exact to={`${path}`} activeStyle={this.active}>
+        //          Home
+        //      </NavLink>
 
-             <NavLink to={`${path}UpdateScore`} activeStyle={this.active}>
-             Update Score
-            </NavLink> */}
+        //      <NavLink to={`${path}ScoreAndWins`} activeStyle={this.active}>
+        //     Scores and Wins
+        //     </NavLink>
 
-        </div>
+        //      <NavLink to={`${path}UpdateScore`} activeStyle={this.active}>
+        //      Update Score
+        //     </NavLink>
+
+        // </div>
         )}
 }
 
