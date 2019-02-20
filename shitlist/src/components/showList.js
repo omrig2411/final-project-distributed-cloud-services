@@ -1,5 +1,5 @@
 import React, {Component } from 'react'
-import show from './show'
+import Show from './show'
 
 class showList extends Component {
     constructor(props) {
@@ -16,29 +16,30 @@ class showList extends Component {
         return (
             <div key={`container${i}`} className="card" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
                 <div className="card-body">
-                    {/* <show key={`show${i}`} index={i}>
+                    <Show key={`show${i}`} index={i}>
                         <h3>{show.name}</h3>
-                        <h5>Points: {show.points}</h5>
-                        <h6>Number of Wins: {show.wins}</h6>
-                        <h6>Number of Losses: {show.losses}</h6>
-                        <h6>Coach: {show.coach}</h6>
-                    </show> */}
+                        <h5>Start Date: {show.startDate}</h5>
+                        <h6>Rating: {show.avgRating}</h6>
+                        <h6>Rated by: {show.numOfUserRated} users.</h6>
+                        <h6>Status: {show.status}</h6>
+                        <img src= {show.img_url}></img>
+                    </Show>
                 </div>
             </div>
         )
     }
 
-    add({ event = null, id = null, show = 'default show', points = 'default points', wins = 'default', losses = 'default', coach = 'default', players = 'default'}) {
+    add({ id = null, name = 'default name', start_date = 'default points', average_rating = 'default', num_of_users_rating = 'default', status = 'default', img_url = 'default'}) {
         this.setState(prevState => ({
           shows: [
             ...prevState.shows, {
               id: id !== null ? id : this.nextID(prevState.shows),
-              show: show,
-              points: points,
-              wins: wins,
-              losses: losses,
-              coach: coach,
-              players: players
+              name: name,
+              startDate: start_date,
+              avgRating: average_rating,
+              numOfUserRated: num_of_users_rating,
+              status: status,
+              img_url: img_url
             }]
         }))
     }
@@ -53,12 +54,12 @@ class showList extends Component {
         fetch(url)
             .then(res => res.json())
             .then(data => data.map(item =>
-                this.add({show: item.Name, 
-                        points: item.Points, 
-                        wins: item.W, 
-                        losses: item.L,
-                        coach: item.Coach ,
-                        players: item.Players
+                this.add({name: name,
+                        startDate: start_date,
+                        avgRating: average_rating,
+                        numOfUserRated: num_of_users_rating,
+                        status: status,
+                        img_url: img_url
                     })))
             .catch(err => console.error(err));
     }
