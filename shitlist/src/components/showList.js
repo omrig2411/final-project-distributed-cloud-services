@@ -50,16 +50,16 @@ class showList extends Component {
       }
 
     componentDidMount() {
-        const url = 'https://ex1-shows.herokuapp.com/allshows';
+        const url = 'https://shit-list-zahor-omri.herokuapp.com/show/getallshows';
         fetch(url)
             .then(res => res.json())
             .then(data => data.map(item =>
-                this.add({name: name,
-                        startDate: start_date,
-                        avgRating: average_rating,
-                        numOfUserRated: num_of_users_rating,
-                        status: status,
-                        img_url: img_url
+                this.add({name: item.name,
+                        startDate: item.startDate,
+                        avgRating: item.avgRating,
+                        numOfUserRated: item.numOfUserRated,
+                        status: item.status,
+                        img_url: item.img_url
                     })))
             .catch(err => console.error(err));
     }
