@@ -58,9 +58,9 @@ class showList extends Component {
             .then(res => res.json())
             .then(data => data.slice(0,100).map(item =>
                 this.add({name: item.name,
-                        startDate: item.startDate,
-                        avgRating: item.avgRating,
-                        numOfUserRated: item.numOfUserRated,
+                        start_date: item.startDate,
+                        average_rating: item.avgRating,
+                        num_of_users_rating: item.numOfUserRated,
                         status: item.status,
                         img_url: item.img_url
                     })))
