@@ -20,7 +20,7 @@ class showList extends Component {
         return (
             <div key={`container${i}`} className="card bg-light mb-3 border-dark" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
 
-                <img className="card-img-top" style={{width: '100%',height:'40%'}} src= {show.img_url} alt="card image cap"></img>
+                <img className="card-img-top" style={{width: '100%',height:'40%'}} src= {show.img_url} alt="card cap"></img>
                 <div className="card-body">
 
                     <Show key={`show${i}`} index={i}

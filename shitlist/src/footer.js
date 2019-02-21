@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import './includes/footer.css';
-import { Navbar,Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 class AppFooter extends Component{
     render(){

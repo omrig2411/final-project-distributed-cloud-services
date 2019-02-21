@@ -31,7 +31,6 @@ class show extends Component {
           type="radio"
           label="1"
           value="1"
-          checked={true}
           checked={this.state.selectedOption === '1'}
           name="formHorizontalRadios"
           onChange={this.handleOptionChange}
@@ -97,7 +96,6 @@ class show extends Component {
     
       save(event) {
         event.preventDefault() // to prevent the default behaviour/ functionality
-        var x;
         var opts={
           userId:123456789,//static user
           rate_score:this.state.selectedOption,
