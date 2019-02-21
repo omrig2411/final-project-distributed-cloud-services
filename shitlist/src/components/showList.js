@@ -19,8 +19,12 @@ class showList extends Component {
     eachshow(show, i) {
         return (
             <div key={`container${i}`} className="card bg-light mb-3 border-dark" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
+
                 <img className="card-img-top" style={{width: '100%',height:'40%'}} src= {show.img_url} alt="card image cap"></img>
                 <div className="card-body">
+                <img class="card-img-top" src= {show.img_url} alt="card image cap" style={{maxHeight: 350 + 'px'}}></img>
+                <div className="card-body" style={{maxHeight: 200 + 'px'}}>
+
                     <Show key={`show${i}`} index={i}
                     onChange={ this.update}
                     onDelete={ this.delete}>
@@ -31,6 +35,7 @@ class showList extends Component {
                         <h6>Status: {show.status}</h6>                        
                     </Show>
                 </div>
+            </div>
             </div>
         )
     }
@@ -51,7 +56,7 @@ class showList extends Component {
     }
 
     nextID(shows = []) {
-        let max = shows.reduce((prev, curr) => prev.id > curr.id ? prev.id : curr.id , 0)
+        var max = shows.reduce((prev, curr) => prev.id > curr.id ? prev.id : curr.id , 0)
         return ++max
       }
 
