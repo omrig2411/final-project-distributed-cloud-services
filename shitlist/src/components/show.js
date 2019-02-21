@@ -1,6 +1,7 @@
 import React, {Component } from 'react'
 import { MdEdit, MdBackspace, MdSave } from "react-icons/md"
 import { Col,Form } from 'react-bootstrap';
+
 class show extends Component {
     constructor(props){
         super(props)

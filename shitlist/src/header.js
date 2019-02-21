@@ -26,7 +26,7 @@ class Header extends Component {
                     </nav>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#allShows">All Shows</Nav.Link>
+                        <Nav.Link exact to={`${path}`}>All Shows</Nav.Link>
                         <Nav.Link href="#ratedShow">All Rated Shows</Nav.Link>
                         <Nav.Link href="#nonRated">Non Rated Shows</Nav.Link>
                     </Nav>
