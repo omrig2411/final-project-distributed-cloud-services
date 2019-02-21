@@ -22,8 +22,6 @@ class showList extends Component {
 
                 <img className="card-img-top" style={{width: '100%',height:'40%'}} src= {show.img_url} alt="card image cap"></img>
                 <div className="card-body">
-                <img class="card-img-top" src= {show.img_url} alt="card image cap" style={{maxHeight: 350 + 'px'}}></img>
-                <div className="card-body" style={{maxHeight: 200 + 'px'}}>
 
                     <Show key={`show${i}`} index={i}
                     onChange={ this.update}
@@ -35,8 +33,7 @@ class showList extends Component {
                         <h6>Status: {show.status}</h6>                        
                     </Show>
                 </div>
-            </div>
-            </div>
+                </div>
         )
     }
 
