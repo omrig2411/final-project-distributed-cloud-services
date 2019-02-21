@@ -77,7 +77,6 @@ class showList extends Component {
         return(
             <div className = "card-group">
                 { this.state.shows.map(this.eachshow)}
-                <InfiniteLoader onVisited={ () => this.handleVisit() } />
             </div>
         )
     }

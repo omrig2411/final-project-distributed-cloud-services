@@ -9,10 +9,16 @@ class show extends Component {
             editing: false 
         }
         this.edit = this.edit.bind(this)
+        this.handleOptionChange = this.handleOptionChange.bind(this)
         this.delete = this.delete.bind(this)
         this.save = this.save.bind(this)
         this.renderForm = this.renderForm.bind(this)
         this.renderUI = this.renderUI.bind(this)
+    }
+    handleOptionChange(changeEvent) {
+      this.setState({
+        selectedOption: changeEvent.target.value
+      });
     }
     renderForm(props) {
         return (
@@ -25,7 +31,9 @@ class show extends Component {
           label="1"
           value="1"
           checked={true}
+          checked={this.state.selectedOption === '1'}
           name="formHorizontalRadios"
+          onChange={this.handleOptionChange}
           id="formHorizontalRadios1"
         />
         <Form.Check
@@ -33,7 +41,9 @@ class show extends Component {
           type="radio"
           label="2"
           value="2"
+          checked={this.state.selectedOption === '2'}
           name="formHorizontalRadios"
+          onChange={this.handleOptionChange}
           id="formHorizontalRadios2"
         />
         <Form.Check
@@ -41,7 +51,9 @@ class show extends Component {
           type="radio"
           label="3"
           value="3"
+          checked={this.state.selectedOption === '3'}
           name="formHorizontalRadios"
+          onChange={this.handleOptionChange}
           id="formHorizontalRadios3"
         />
         <Form.Check
@@ -49,7 +61,9 @@ class show extends Component {
           type="radio"
           value="4"
           label="4"
+          checked={this.state.selectedOption === '4'}
           name="formHorizontalRadios"
+          onChange={this.handleOptionChange}
           id="formHorizontalRadios4"
         />
         <Form.Check
@@ -57,11 +71,13 @@ class show extends Component {
           type="radio"
           label="5"
           value="5"
+          checked={this.state.selectedOption === '5'}
           name="formHorizontalRadios"
+          onChange={this.handleOptionChange}
           id="formHorizontalRadios5"
         />
       </Col>
-              <textarea value="comment here" ref={input => this.newIdea = input} cols="20" rows="5" />
+              <textarea placeholder="comment here" ref={input => this.newIdea = input} cols="20" rows="5" />
               <span>
                 <button className="btn btn-primary" onClick={this.save}> Save Rate <MdSave /></button>
                 <button className="btn btn-primary" onClick={this.cancel}> back <MdBackspace /></button>
@@ -81,7 +97,21 @@ class show extends Component {
       save(event) {
         event.preventDefault() // to prevent the default behaviour/ functionality
         var x;
-        console.log(this.newIdea)
+        var opts={
+          userId:123456789,//static user
+          rate_score:this.state.selectedOption,
+          rate_text:this.newIdea.value,
+          show_id:33337
+        }
+        fetch('https://shit-list-zahor-omri.herokuapp.com/user/createRating', {
+          method: 'post',
+          body: JSON.stringify(opts)
+        }).then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          console.log('Created Gist:', data.html_url);
+        });
+        console.log(this.newIdea.value,this.state.selectedOption)
 //         for (var i = 0, length = this.newIdea.formHorizontalRadios.length; i < length; i++)
 // {
 //  if (this.newIdeaformHorizontalRadios[i].checked)
