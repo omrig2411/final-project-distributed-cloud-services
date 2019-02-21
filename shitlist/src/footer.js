@@ -7,7 +7,7 @@ class AppFooter extends Component{
         return(
             <div className="fot">
                 <section className="left">
-                    <Navbar.Brand class="navbar-brand mb-0 h1" href="#home">back to top of the Shit list</Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand mb-0 h1" href="#home">back to top of the Shit list</Navbar.Brand>
                 </section>
             </div>
         )

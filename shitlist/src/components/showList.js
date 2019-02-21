@@ -19,12 +19,12 @@ class showList extends Component {
     eachshow(show, i) {
         return (
             <div key={`container${i}`} className="card bg-light mb-3 border-dark" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
-                <img class="card-img-top" src= {show.img_url} alt="card image cap"></img>
+                <img className="card-img-top" style={{width: '100%',height:'40%'}} src= {show.img_url} alt="card image cap"></img>
                 <div className="card-body">
                     <Show key={`show${i}`} index={i}
-                    onChange={ this.update }
-                    onDelete={ this.delete }>
-                        <h3 class="card-title">{show.name}</h3>
+                    onChange={ this.update}
+                    onDelete={ this.delete}>
+                        <h3 className="card-title">{show.name}</h3>
                         <h5>Start Date: {show.startDate}</h5>
                         <h6>Rating: {show.avgRating}</h6>
                         <h6>Rated by: {show.numOfUserRated} users.</h6>

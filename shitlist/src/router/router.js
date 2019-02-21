@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
-import showList from '../Components/showList'
+import showList from '../components/showList'
 import Header from '../header'
 import Footer from '../footer'
 import '../includes/router.css';

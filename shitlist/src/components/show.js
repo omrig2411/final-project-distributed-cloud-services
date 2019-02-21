@@ -105,13 +105,12 @@ class show extends Component {
           show_id:33337
         }
         fetch('https://shit-list-zahor-omri.herokuapp.com/user/createRating', {
-          method: 'post',
-          body: JSON.stringify(opts)
-        }).then(function(response) {
-          return response.json();
-        }).then(function(data) {
-          console.log('Created Gist:', data.html_url);
-        });
+                method: 'POST',
+                headers : new Headers(),
+                body:JSON.stringify(opts)
+            }).then((res) => res.json())
+            .then((data) =>  console.log(data))
+            .catch((err)=>console.log(err))
         console.log(this.newIdea.value,this.state.selectedOption)
 //         for (var i = 0, length = this.newIdea.formHorizontalRadios.length; i < length; i++)
 // {
