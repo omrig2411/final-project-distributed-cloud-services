@@ -12,7 +12,6 @@ const ReactRouter = () => {
     return(
         <React.Fragment>
             <div id="headerBG">
-                <img></img>
                 <Header/>
             </div>
             <Route exact path={path} component={showList}/>            

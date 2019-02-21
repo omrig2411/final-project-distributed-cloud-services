@@ -102,16 +102,18 @@ class show extends Component {
     
       save(event) {
         event.preventDefault() // to prevent the default behaviour/ functionality
-        var opts={
-          userId:123456789,//static user
-          rate_score:this.state.selectedOption,
-          rate_text:this.newIdea.value,
-          show_id:33337
-        }
         fetch('https://shit-list-zahor-omri.herokuapp.com/user/createRating', {
                 method: 'POST',
-                headers : new Headers(),
-                body:JSON.stringify(opts)
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/x-www-form-urlencoded'
+                } ,
+                body:{
+                  "userId":123456789,//static user
+                  "rate_score":this.state.selectedOption,
+                  "rate_text":this.newIdea.value,
+                  "show_id":33337
+                }
             }).then((res) => res.json())
             .then((data) =>  console.log(data))
             .catch((err)=>console.log(err))
