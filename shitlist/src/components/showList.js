@@ -75,7 +75,7 @@ class showList extends Component {
 
     render() {
         return(
-            <div className = "card-group">
+            <div className = "card-group" id="allShows">
                 { this.state.shows.map(this.eachshow)}
             </div>
         )

@@ -17,7 +17,7 @@ class Header extends Component {
     // }
     render() {
         return(
-            <div className="appHeader">
+            <div className="appHeader" id="apphead">
                 <Navbar bg="white" expand="lg">
                     <nav className="navbar navbar-white bg-white" style={{backgroundColor:'#' + 'd9b595'}}>
                         <a className="navbar-brand" href="#">
@@ -26,7 +26,7 @@ class Header extends Component {
                     </nav>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link exact to={`${path}`}>All Shows</Nav.Link>
+                        <Nav.Link href="#allShows">All Shows</Nav.Link>
                         <Nav.Link href="#ratedShow">All Rated Shows</Nav.Link>
                         <Nav.Link href="#nonRated">Non Rated Shows</Nav.Link>
                     </Nav>
