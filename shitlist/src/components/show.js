@@ -13,12 +13,18 @@ class show extends Component {
         this.handleOptionChange = this.handleOptionChange.bind(this)
         this.delete = this.delete.bind(this)
         this.save = this.save.bind(this)
+        this.cancel = this.cancel.bind(this)
         this.renderForm = this.renderForm.bind(this)
         this.renderUI = this.renderUI.bind(this)
     }
     handleOptionChange(changeEvent) {
       this.setState({
         selectedOption: changeEvent.target.value
+      });
+    }
+    cancel(){
+      this.setState({
+        editing:false
       });
     }
     renderForm(props) {
