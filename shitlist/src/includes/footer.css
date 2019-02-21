@@ -1,11 +1,14 @@
-h4{
-    color:red;
+* {
+    margin:0px;
+    padding:0px;
 }
+
 .fot{
-    background-color: black;
+    background-color: yellow;
     color:white;
     display: flex;
 }
+
 .left{
     background-color: black;
 }

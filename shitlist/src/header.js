@@ -1,24 +1,29 @@
 import { NavLink } from 'react-router-dom'
 import React,{Component} from 'react'
-import './header';
+import './includes/header.css';
 import { Navbar,Nav } from 'react-bootstrap';
 const path = window.location.pathname
 
 class Header extends Component {
-    active = {
-        backgroundColor: "#212F3D",
-        color: "white",
-        fontWeight: "bold"
-    }
-    header = {
-        listStyle: "none",
-        display: "flex",
-        justifyContent: "space-evenly"
-    }
+    // active = {
+    //     backgroundColor: "#212F3D",
+    //     color: "white",
+    //     fontWeight: "bold"
+    // }
+    // header = {
+    //     listStyle: "none",
+    //     display: "flex",
+    //     justifyContent: "space-evenly"
+    // }
     render() {
         return(
             <div className="appHeader">
                 <Navbar bg="light" expand="lg">
+                    <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <img id="logo" width="210" height="80" src="#" class="d-inline-block allign-top" alt=""></img>
+                        </a>
+                    </nav>
                 <Navbar.Brand href="#home">Shit list</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -30,7 +35,7 @@ class Header extends Component {
                 </Navbar.Collapse>
                 </Navbar>
                                      
-               </div>
+            </div>
 
         //     <div style={this.header}>
         //         <NavLink exact to={`${path}`} activeStyle={this.active}>

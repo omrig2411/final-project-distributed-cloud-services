@@ -1,0 +1,18 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+
+.appHeader{
+    background-color: black
+}
+
+#logo{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url(../images/logo.png);
+}
+
+.headNav{
+    display: flex;
+}

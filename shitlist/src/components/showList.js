@@ -1,6 +1,6 @@
-import React, {Component } from 'react'
 import Show from './show'
-// import {List} from 'react-virtualized'
+import InfiniteLoader from 'react-infinite-loader'
+import React, { Component } from 'react'
 
 class showList extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class showList extends Component {
         this.eachshow = this.eachshow.bind(this)
         this.add = this.add.bind(this)
         this.nextID = this.nextID.bind(this)
-    }
+}
 
     eachshow(show, i) {
         return (
@@ -56,7 +56,7 @@ class showList extends Component {
         const url = 'https://shit-list-zahor-omri.herokuapp.com/show/getallshows';
         fetch(url)
             .then(res => res.json())
-            .then(data => data.slice(0,100).map(item =>
+            .then(data => data.slice(0,2).map(item =>
                 this.add({name: item.name,
                         start_date: item.startDate,
                         average_rating: item.avgRating,
@@ -66,10 +66,13 @@ class showList extends Component {
                     })))
             .catch(err => console.error(err));
     }
+
+
     render() {
         return(
             <div className = "showList">
                 { this.state.shows.map(this.eachshow)}
+                <InfiniteLoader onVisited={ () => this.handleVisit() } />
             </div>
         )
     }
