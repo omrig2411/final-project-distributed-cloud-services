@@ -19,7 +19,7 @@ class Header extends Component {
         return(
             <div className="appHeader">
                 <Navbar bg="white" expand="lg">
-                    <nav className="navbar navbar-white bg-white">
+                    <nav className="navbar navbar-white bg-white" style={{backgroundColor:'#' + 'd9b595'}}>
                         <a className="navbar-brand" href="#">
                             <img id="logo" width="210" height="80" src="#" className="d-inline-block allign-top" alt=""></img>
                         </a>

@@ -4,11 +4,8 @@
 }
 
 .fot{
-    background-color: white;
     color:black;
     display: flex;
-}
-
-.left{
-    background-color: white;
+    border: 3px;
+    border-color: black;
 }

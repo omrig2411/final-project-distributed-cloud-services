@@ -19,8 +19,8 @@ class showList extends Component {
     eachshow(show, i) {
         return (
             <div key={`container${i}`} className="card bg-light mb-3 border-dark" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
-                <img class="card-img-top" src= {show.img_url} alt="card image cap"></img>
-                <div className="card-body">
+                <img class="card-img-top" src= {show.img_url} alt="card image cap" style={{maxHeight: 350 + 'px'}}></img>
+                <div className="card-body" style={{maxHeight: 200 + 'px'}}>
                     <Show key={`show${i}`} index={i}
                     onChange={ this.update }
                     onDelete={ this.delete }>
