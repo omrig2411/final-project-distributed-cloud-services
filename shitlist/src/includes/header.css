@@ -4,7 +4,12 @@
 }
 
 .appHeader{
-    background-color: black
+    height:600px;
+    background-image: url(../images/background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    
 }
 
 #logo{
@@ -13,6 +18,7 @@
     background-image: url(../images/logo.png);
 }
 
-.headNav{
-    display: flex;
+.navbar navbar-light bg-white{
+    width: 100%;
+    position: absolute;
 }

@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom'
 import showList from '../Components/showList'
 import Header from '../header'
 import Footer from '../footer'
-import './includes/router.css';
+import '../includes/router.css';
 // import UpdateScore from '../Components/UpdateScore'
 // import ScoreAndWins from '../Components/ScoreAndWins'
 

@@ -18,14 +18,12 @@ class Header extends Component {
     render() {
         return(
             <div className="appHeader">
-                <Navbar bg="light" expand="lg">
-                    <nav class="navbar navbar-light bg-light">
+                <Navbar bg="white" expand="lg">
+                    <nav class="navbar navbar-white bg-white">
                         <a class="navbar-brand" href="#">
                             <img id="logo" width="210" height="80" src="#" class="d-inline-block allign-top" alt=""></img>
                         </a>
                     </nav>
-                <Navbar.Brand href="#home">Shit list</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="#allShows">All Shows</Nav.Link>

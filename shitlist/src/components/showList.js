@@ -11,20 +11,25 @@ class showList extends Component {
         this.eachshow = this.eachshow.bind(this)
         this.add = this.add.bind(this)
         this.nextID = this.nextID.bind(this)
+        this.update = this.update.bind(this)
 }
+    update(newIdea, i) {
+    }
 
     eachshow(show, i) {
         return (
-            <div key={`container${i}`} className="card" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
+            <div key={`container${i}`} className="card bg-light mb-3" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
                 <img class="card-img-top" src= {show.img_url} alt="card image cap"></img>
                 <div className="card-body">
-                    <Show key={`show${i}`} index={i}>
+                    <Show key={`show${i}`} index={i}
+                    onChange={ this.update }
+                    onDelete={ this.delete }>
                         <h3 class="card-title">{show.name}</h3>
                         <h5>Start Date: {show.startDate}</h5>
                         <h6>Rating: {show.avgRating}</h6>
                         <h6>Rated by: {show.numOfUserRated} users.</h6>
                         <h6>Status: {show.status}</h6>
-                        <a href="#" class="btn btn-primary">Rate Show</a>
+                        {/* <a href="#" class="btn btn-primary">Rate Show</a> */}
                         
                     </Show>
                 </div>
@@ -56,7 +61,7 @@ class showList extends Component {
         const url = 'https://shit-list-zahor-omri.herokuapp.com/show/getallshows';
         fetch(url)
             .then(res => res.json())
-            .then(data => data.slice(0,2).map(item =>
+            .then(data => data.slice(0,5).map(item =>
                 this.add({name: item.name,
                         start_date: item.startDate,
                         average_rating: item.avgRating,
@@ -70,7 +75,7 @@ class showList extends Component {
 
     render() {
         return(
-            <div className = "showList">
+            <div className = "card-group">
                 { this.state.shows.map(this.eachshow)}
                 <InfiniteLoader onVisited={ () => this.handleVisit() } />
             </div>
