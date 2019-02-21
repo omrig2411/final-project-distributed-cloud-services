@@ -5,7 +5,7 @@
 
 .appHeader{
     height:600px;
-    background-image: url(../images/background.jpg);
+    background-image: url(http://shenkar.html5-book.co.il/2018-2019/dcs/dev_287/images/background.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     margin-bottom: 10px;
@@ -15,7 +15,7 @@
 #logo{
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url(../images/logo.png);
+    background-image: url(http://shenkar.html5-book.co.il/2018-2019/dcs/dev_287/images/logo.png);
 }
 
 .navbar navbar-light bg-white{
