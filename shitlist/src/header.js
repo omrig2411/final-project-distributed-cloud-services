@@ -19,9 +19,9 @@ class Header extends Component {
         return(
             <div className="appHeader">
                 <Navbar bg="white" expand="lg">
-                    <nav class="navbar navbar-white bg-white">
-                        <a class="navbar-brand" href="#">
-                            <img id="logo" width="210" height="80" src="#" class="d-inline-block allign-top" alt=""></img>
+                    <nav className="navbar navbar-white bg-white">
+                        <a className="navbar-brand" href="#">
+                            <img id="logo" width="210" height="80" src="#" className="d-inline-block allign-top" alt=""></img>
                         </a>
                     </nav>
                 <Navbar.Collapse id="basic-navbar-nav">

@@ -1,6 +1,6 @@
 import Show from './show'
-import InfiniteLoader from 'react-infinite-loader'
 import React, { Component } from 'react'
+import '../includes/showList.css';
 
 class showList extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class showList extends Component {
 
     eachshow(show, i) {
         return (
-            <div key={`container${i}`} className="card bg-light mb-3" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
+            <div key={`container${i}`} className="card bg-light mb-3 border-dark" style={{width: 18 + 'rem', marginBottom: 7 + 'px'}}>
                 <img class="card-img-top" src= {show.img_url} alt="card image cap"></img>
                 <div className="card-body">
                     <Show key={`show${i}`} index={i}
@@ -28,9 +28,7 @@ class showList extends Component {
                         <h5>Start Date: {show.startDate}</h5>
                         <h6>Rating: {show.avgRating}</h6>
                         <h6>Rated by: {show.numOfUserRated} users.</h6>
-                        <h6>Status: {show.status}</h6>
-                        {/* <a href="#" class="btn btn-primary">Rate Show</a> */}
-                        
+                        <h6>Status: {show.status}</h6>                        
                     </Show>
                 </div>
             </div>

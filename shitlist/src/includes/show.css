@@ -1,0 +1,13 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+
+.show {
+    display: block;
+  }
+
+  .show .rating-btn {
+    position: absolute;
+    bottom:1%;
+  }

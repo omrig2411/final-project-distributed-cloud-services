@@ -1,6 +1,7 @@
 import React, {Component } from 'react'
 import { MdEdit, MdBackspace, MdSave } from "react-icons/md"
 import { Col,Form } from 'react-bootstrap';
+import '../includes/show.css';
 
 class show extends Component {
     constructor(props){
@@ -143,18 +144,14 @@ class show extends Component {
     
       renderUI(props) {
         return (
-                <div className= 'show'>
-                    <div> {this.props.children} </div>
-                    <span>
-          <button 
-            onClick={this.edit} 
-            className="btn btn-primary" 
-            style={{marginRight: '7px'}}
-          > 
-            Rate show <MdEdit />
-          </button>
-        </span>
-                </div>
+          <div className= 'show'>
+            <div className="show-data"> {this.props.children} </div>
+              <span className="rating-btn">
+                  <button onClick={this.edit} className="btn btn-primary"> 
+                  Rate show <MdEdit />
+                  </button>
+              </span>
+            </div>
         )
       }
     
